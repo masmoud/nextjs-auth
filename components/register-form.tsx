@@ -14,12 +14,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-
-const formSchema = z.object({
-  name: z.string().min(2).max(50),
-  email: z.string().min(2).max(50),
-  password: z.string().min(2).max(50),
-});
+import { formSchema } from "@/lib/auth-schema";
 
 export default function RegisterForm() {
   const form = useForm<z.infer<typeof formSchema>>({
